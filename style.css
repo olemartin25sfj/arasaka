@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #220711, #720c21);
+  color: white;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.logo-center img {
+  max-width: 300px;
+  opacity: 0.7;
+}
+
+/* Slik kan du style lenken for å hindre fargeendringer */
+a.logo-link {
+  text-decoration: none; /* Fjerner understreking */
+}
+
+a.logo-link:visited {
+  color: inherit; /* Beholder den originale fargen */
+}
+
+a.logo-link:hover {
+  color: inherit; /* Beholder den originale fargen når man hover over */
+}
+
+a.logo-link:active {
+  color: inherit; /* Beholder den originale fargen når lenken blir trykket på */
+}
+
+/* Generelle stiler for nav-lenker */
+nav a {
+  text-decoration: none; /* Fjerner standard underlinje */
+  position: relative; /* Setter relativ posisjonering for pseudo-elementet */
+  color: black; /* Standard tekstfarge, kan endres */
+}
+
+/* Hover-effekt med rød underlinje */
+nav a:hover::after {
+  content: ""; /* Lager et tomt pseudo-element */
+  position: absolute;
+  bottom: 0; /* Plasserer linjen nederst under lenken */
+  left: 0;
+  width: 100%; /* Linjen tar opp hele bredden av lenken */
+  height: 2px; /* Tykkelsen på underlinjen */
+  background-color: red; /* Fargen på underlinjen */
+}
+
+/* Valgfritt: Stil for aktiv lenke (hvis du vil at den skal ha en annen stil) */
+nav a.active {
+  color: rgb(
+    255,
+    255,
+    255
+  ); /* Setter fargen for den aktive lenken, kan endres */
+}
+
+.cursor {
+  position: absolute;
+  width: 20px; /* Størrelsen på sirkelen */
+  height: 20px; /* Størrelsen på sirkelen */
+  background-color: red; /* Farge på sirkelen */
+  border-radius: 50%; /* Gjør det til en sirkel */
+  pointer-events: none; /* Slik at den ikke blokkerer andre elementer */
+  transition: transform 0.1s ease; /* Myk overgang for å gjøre bevegelsen jevn */
+}
+.logo {
+  transition: color 0.3s, transform 0.3s;
+}
+.ticker {
+  width: 100%; /* Sørger for at ticker tar opp hele bredden */
+  overflow: hidden; /* Fjerner tekst som går utenfor */
+  background: #000; /* Bakgrunnsfarge for ticker */
+  color: white; /* Tekstfarge */
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+#ticker-text {
+  display: inline-block;
+  white-space: nowrap; /* Forhindrer at teksten brytes */
+  animation: ticker 15s linear infinite; /* Animasjon som varer 15 sekunder, med uendelig repetisjon */
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(100%); /* Start ved høyre side */
+  }
+  100% {
+    transform: translateX(-100%); /* Beveger seg til venstre side */
+  }
+}
+
